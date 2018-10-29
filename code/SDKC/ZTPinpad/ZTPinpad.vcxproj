@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A84D3454-4147-4A0B-A30F-8EED65895F43}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ZTPinpad</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutDir>..\..\..\bin</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ZTPINPAD_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\common;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>..\..\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>..\lib\$(TargetName).lib</ImportLibrary>
+      <AdditionalOptions>/EXPORT:InstancePinpad  /EXPORT:DeletePinpadObject  /EXPORT:AutoEnlargeKey %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ZTPINPAD_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\interface;..\include;..\common;</AdditionalIncludeDirectories>
+      <EnablePREfast>true</EnablePREfast>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>..\..\..\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\lib</AdditionalLibraryDirectories>
+      <ImportLibrary>..\..\..\lib\$(TargetName).lib</ImportLibrary>
+      <AdditionalOptions>/EXPORT:InstancePinpad  /EXPORT:ReleasePinpad %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>BaseAlg.lib;BaseSystem.lib;BasePort.lib;User32.lib;</AdditionalDependencies>
+      <EnableUAC>true</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Interface\errorcode.h" />
+    <ClInclude Include="..\..\..\Interface\IDriver.h" />
+    <ClInclude Include="..\..\..\Interface\IPinpad.h" />
+    <ClInclude Include="..\..\..\Interface\IPinpadEx.h" />
+    <ClInclude Include="..\..\..\Interface\IPort.h" />
+    <ClInclude Include="..\..\..\Interface\ISystem.h" />
+    <ClInclude Include="..\common\CCommandBase.h" />
+    <ClInclude Include="..\common\CPinpadFace.h" />
+    <ClInclude Include="CEccPCI.h" />
+    <ClInclude Include="CEccVISA.h" />
+    <ClInclude Include="CPinpadBase.h" />
+    <ClInclude Include="CPinpadEPP.h" />
+    <ClInclude Include="CPinpadEPP_R.h" />
+    <ClInclude Include="CPinpadHxx.h" />
+    <ClInclude Include="CPinpadSimulate.h" />
+    <ClInclude Include="CPinpadVISA.h" />
+    <ClInclude Include="CPinpadVISA_R.h" />
+    <ClInclude Include="CPinpadWOSA.h" />
+    <ClInclude Include="CPinpadWOSA_R.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\CCommandBase.cpp" />
+    <ClCompile Include="..\common\CPinpadFace.cpp" />
+    <ClCompile Include="CEccPCI.cpp" />
+    <ClCompile Include="CEccVISA.cpp" />
+    <ClCompile Include="CPinpadBase.cpp" />
+    <ClCompile Include="CPinpadEPP.cpp" />
+    <ClCompile Include="CPinpadEPP_R.cpp" />
+    <ClCompile Include="CPinpadHxx.cpp" />
+    <ClCompile Include="CPinpadSimulate.cpp" />
+    <ClCompile Include="CPinpadVISA.cpp" />
+    <ClCompile Include="CPinpadVISA_R.cpp" />
+    <ClCompile Include="CPinpadWOSA.cpp" />
+    <ClCompile Include="CPinpadWOSA_R.cpp" />
+    <ClCompile Include="PinpadFactory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ZTPinpad.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

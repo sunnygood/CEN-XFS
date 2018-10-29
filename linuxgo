@@ -1,0 +1,94 @@
+
+#arm's gcc/g++, if need arm version, copy this then run at Terminal.
+#export PATH=/usr/local/arm/4.5.1/bin:$PATH
+#export PATH=/usr/local/arm/fsl-linaro-toolchain/bin:$PATH
+
+echo "  "
+echo "begin......"
+echo "  "
+
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BaseSystem
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BasePort
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BaseAlg
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+
+
+echo "  "
+echo "2. SDKC"
+pushd code/SDKC/ZTPinpad
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+
+
+echo "  "
+echo "3. AdapterC"
+pushd code/AdapterC/PinpadC-UMS
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+echo "  "
+
+
+echo "  "
+echo "3. AdapterC"
+pushd code/AdapterC/PinpadC
+pwd
+mkdir "./tmp/"
+make 
+make staticlib
+pushd
+echo "  "
+
+
+echo "  "
+echo "4. OtherC"
+pushd code/OtherC/linuxtest
+
+#!/bin/sh
+if [ ! -d "./tmp/obj" ]; then
+  mkdir "./tmp/"
+  mkdir "./tmp/rcc/"
+  mkdir "./tmp/obj/"
+  mkdir "./ui/"
+  mkdir "./moc/"
+fi
+
+pwd
+make 
+pushd
+
+
+echo "  "
+echo "end......"
+echo "  "
+

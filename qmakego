@@ -1,0 +1,70 @@
+
+#arm's QT, if need arm version, copy this then run at Terminal.
+#export PATH=/usr/local/Trolltech/QtEmbedded-4.7.0-arm/bin:$PATH
+#export PATH=/usr/local/Trolltech/QtEmbedded-4.7.0-arm-imx6q/bin:$PATH
+
+
+echo "  "
+echo "begin......"
+echo "  "
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BaseSystem
+pwd
+qmake -o makefile BaseSystem.pro
+pushd
+
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BasePort
+pwd
+qmake -o makefile BasePort.pro
+pushd
+
+
+echo "  "
+echo "1. BaseC"
+pushd code/BaseC/BaseAlg
+pwd
+qmake -o makefile BaseAlg.pro
+pushd
+
+
+echo "  "
+echo "2. SDKC"
+pushd code/SDKC/ZTPinpad
+pwd
+qmake -o makefile ZTPinpad.pro
+pushd
+
+
+echo "  "
+echo "3. AdapterC"
+pushd code/AdapterC/PinpadC-UMS
+pwd
+qmake -o makefile PinpadC-UMS.pro
+pushd
+
+
+echo "  "
+echo "3. AdapterC"
+pushd code/AdapterC/PinpadC
+pwd
+qmake -o makefile PinpadC.pro
+pushd
+
+
+echo "  "
+echo "4. OtherC"
+pushd code/OtherC/linuxtest
+pwd
+qmake -o makefile linuxtest.pro
+pushd
+
+
+echo "  "
+echo "end......"
+echo "  "
+
