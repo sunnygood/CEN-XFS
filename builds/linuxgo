@@ -10,7 +10,7 @@ echo "  "
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BaseSystem
+pushd ../code/BaseC/BaseSystem
 pwd
 mkdir "./tmp/"
 make 
@@ -20,7 +20,7 @@ pushd
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BasePort
+pushd ../code/BaseC/BasePort
 pwd
 mkdir "./tmp/"
 make 
@@ -30,7 +30,7 @@ pushd
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BaseAlg
+pushd ../code/BaseC/BaseAlg
 pwd
 mkdir "./tmp/"
 make 
@@ -40,7 +40,7 @@ pushd
 
 echo "  "
 echo "2. SDKC"
-pushd code/SDKC/ZTPinpad
+pushd ../code/SDKC/ZTPinpad
 pwd
 mkdir "./tmp/"
 make 
@@ -50,7 +50,7 @@ pushd
 
 echo "  "
 echo "3. AdapterC"
-pushd code/AdapterC/PinpadC-UMS
+pushd ../code/AdapterC/PinpadC-UMS
 pwd
 mkdir "./tmp/"
 make 
@@ -61,7 +61,7 @@ echo "  "
 
 echo "  "
 echo "3. AdapterC"
-pushd code/AdapterC/PinpadC
+pushd ../code/AdapterC/PinpadC
 pwd
 mkdir "./tmp/"
 make 
@@ -72,7 +72,7 @@ echo "  "
 
 echo "  "
 echo "4. OtherC"
-pushd code/OtherC/linuxtest
+pushd ../code/OtherC/linuxtest
 
 #!/bin/sh
 if [ ! -d "./tmp/obj" ]; then

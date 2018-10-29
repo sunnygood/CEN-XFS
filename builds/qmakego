@@ -10,7 +10,7 @@ echo "  "
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BaseSystem
+pushd ../code/BaseC/BaseSystem
 pwd
 qmake -o makefile BaseSystem.pro
 pushd
@@ -18,7 +18,7 @@ pushd
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BasePort
+pushd ../code/BaseC/BasePort
 pwd
 qmake -o makefile BasePort.pro
 pushd
@@ -26,7 +26,7 @@ pushd
 
 echo "  "
 echo "1. BaseC"
-pushd code/BaseC/BaseAlg
+pushd ../code/BaseC/BaseAlg
 pwd
 qmake -o makefile BaseAlg.pro
 pushd
@@ -34,7 +34,7 @@ pushd
 
 echo "  "
 echo "2. SDKC"
-pushd code/SDKC/ZTPinpad
+pushd ../code/SDKC/ZTPinpad
 pwd
 qmake -o makefile ZTPinpad.pro
 pushd
@@ -42,7 +42,7 @@ pushd
 
 echo "  "
 echo "3. AdapterC"
-pushd code/AdapterC/PinpadC-UMS
+pushd ../code/AdapterC/PinpadC-UMS
 pwd
 qmake -o makefile PinpadC-UMS.pro
 pushd
@@ -50,7 +50,7 @@ pushd
 
 echo "  "
 echo "3. AdapterC"
-pushd code/AdapterC/PinpadC
+pushd ../code/AdapterC/PinpadC
 pwd
 qmake -o makefile PinpadC.pro
 pushd
@@ -58,7 +58,7 @@ pushd
 
 echo "  "
 echo "4. OtherC"
-pushd code/OtherC/linuxtest
+pushd ../code/OtherC/linuxtest
 pwd
 qmake -o makefile linuxtest.pro
 pushd
